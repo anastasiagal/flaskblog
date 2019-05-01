@@ -3,7 +3,7 @@ from flask import render_template
 import os
 from forms import LoginForm
 
-app = Flask(__name__, template_folder='app/templates')
+app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 # ... add more variables here as needed

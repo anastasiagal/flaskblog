@@ -1,2 +1,5 @@
 #virtual environment dir
 /venv
+
+#python cache
+/__pycache__
