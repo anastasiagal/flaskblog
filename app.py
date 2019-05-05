@@ -5,12 +5,18 @@ from forms import LoginForm
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import models
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+import models
+
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': models.User, 'Post': models.Post}
+
 
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 # ... add more variables here as needed
