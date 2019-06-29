@@ -6,11 +6,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from app import app, db, login
 
+
 followers = db.Table(
     'followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -52,7 +54,6 @@ class User(UserMixin, db.Model):
         return self.followed.filter(
             followers.c.followed_id == user.id).count() > 0
 
-
     def followed_posts(self):
         followed = Post.query.join(
             followers, (followers.c.followed_id == Post.user_id)).filter(
@@ -73,6 +74,7 @@ class User(UserMixin, db.Model):
         except:
             return
         return User.query.get(id)
+
 
 @login.user_loader
 def load_user(id):

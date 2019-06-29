@@ -10,3 +10,5 @@
 2019-06-16 18:25:06,717 INFO: Flaskblog startup [in /root/python/flaskblog/app/__init__.py:47]
 2019-06-19 17:50:12,411 INFO: Flaskblog startup [in /root/python/flaskblog/app/__init__.py:47]
 2019-06-19 17:53:58,187 INFO: Flaskblog startup [in /root/python/flaskblog/app/__init__.py:47]
+2019-06-27 16:55:45,613 INFO: Flaskblog startup [in /root/python/flaskblog/app/__init__.py:55]
+2019-06-27 16:55:59,964 INFO: Flaskblog startup [in /root/python/flaskblog/app/__init__.py:55]
